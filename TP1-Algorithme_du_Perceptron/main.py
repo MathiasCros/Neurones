@@ -108,3 +108,46 @@ if __name__ == '__main__':
         plt.plot(result2, label='dérivé de {mode}')
         plt.show
 
+def generer_donnees_separables(n_points=100, noise=0.1):
+    """
+    Génère deux classes de points linéairement séparables
+    """
+    np.random.seed(42)
+    # TODO: Générer deux nuages de points séparables
+    n = n_points // 2
+    
+    x1 = np.random.normal(2, noise, (n, 2))
+    y1 = [1 for _ in range(n)]
+    x2 = np.random.normal(-2, noise, (n, 2))
+    y2 = [-1 for _ in range(n)]
+
+    x = list(x1) + list(x2)
+    y = y1 + y2
+    x = np.array(x)
+    y = np.array(y)
+    # Classe 1: points autour de (2, 2)
+    # Classe 2: points autour de (-2, -2)
+    return x, y
+
+def visualiser_donnes(X, y, w=None, b=None, title="Données"):
+    """
+    Visualise les données et optionnellement la droite de séparation
+    """
+    plt.figure(figsize=(8, 6))
+    # Afficher les points
+    mask_pos = (y == 1)
+    plt.scatter(X[mask_pos, 0], X[mask_pos, 1], c='blue', marker='+', s=100, label='Classe +1')
+    plt.scatter(X[~mask_pos, 0], X[~mask_pos, 1], c='red', marker='*', s=100, label='Classe -1')
+    # Afficher la droite de séparation si fournie
+    if w is not None and b is not None:
+        # TODO: Tracer la droite w·x + b = 0
+        x_vals = np.linspace(X[:, 0].min(), X[:, 0].max(), 100)
+        y_vals = -(w[0] * x_vals + b) / w[1]
+        plt.plot(x_vals, y_vals, 'k--', label='Droite de décision')
+    
+    plt.xlabel('x1')
+    plt.ylabel('x2')
+    plt.legend()
+    plt.title(title)
+    plt.grid(True, alpha=0.3)
+    plt.show()

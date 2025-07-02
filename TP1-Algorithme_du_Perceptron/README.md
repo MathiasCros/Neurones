@@ -22,3 +22,7 @@ Quel est l'avantage du Leaky ReLU ?
 ### exo5 + exo 6
 
 Il me faut en moyenne 6 ou 7 époques pour converger pour le and et une moyenne de 6 époques pour le or. (pire cas and : 17, cas or : 10). A chaque fois il ne trouve pas tous le temps les memes poids ni biais.
+
+### exo 7 
+
+La droite change un peu à chaque exécution, montrant quel cherche un minimum l'optimum.

@@ -7,3 +7,6 @@ Le théoreme d'approximation universerelle dit qu'un réseau de neuronon avec un
 => Oui il peux totalement le faire SAUF si il s'agit de fonction complete, cela prendrait une infinité de temps si on essaye pas de mettre de limite.
 
 # Partie 2 :
+
+Je comprends pas la partie 2.2.2 :c
+Pour moi le premiere TODO est deja initialliser c'est pour ça que je ne s
